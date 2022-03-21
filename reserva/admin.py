@@ -8,4 +8,4 @@ class ChaveAdmin(admin.ModelAdmin):
 
 @admin.register(Reserva)
 class ReservaAdmin(admin.ModelAdmin):
-    list_display = ('chave', 'primeiro_nome', 'data_reserva', 'data_devolucao')
+    list_display = ('chaves', 'primeiro_nome', 'data_reserva', 'data_devolucao')

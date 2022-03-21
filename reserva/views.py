@@ -1,3 +1,5 @@
+from collections import _OrderedDictItemsView
+from typing import OrderedDict
 from django.http import response
 from rest_framework.exceptions import NotFound
 from .models import Reserva, Chave
@@ -12,8 +14,11 @@ from rest_framework.response import Response
 
 
 class ReservaViewsets(viewsets.ModelViewSet):
-    queryset = Reserva.objects.all()
+    queryset = Reserva.objects.all().order_by('-data_reserva')
     serializer_class = ReservaSerializers
+    
+
+    
 
 class ChaveViewsets(viewsets.ModelViewSet):
     queryset = Chave.objects.all()
