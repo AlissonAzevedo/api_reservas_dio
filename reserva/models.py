@@ -31,10 +31,10 @@ class Reserva(models.Model):
         return self.data_reserva.strftime('%d/%m/%Y - %H:%M')
     
     def reservado(self):
-        if self.data_devolucao != None:
-            self.ativo = False
+        if self.data_devolucao == '':
+            self.ativo = True
             return self.ativo
         else:
-            self.ativo = True
+            self.ativo = False
             return self.ativo
             
