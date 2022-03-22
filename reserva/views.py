@@ -18,8 +18,6 @@ class ReservaViewsets(viewsets.ModelViewSet):
     serializer_class = ReservaSerializers
     
 
-    
-
 class ChaveViewsets(viewsets.ModelViewSet):
     queryset = Chave.objects.all()
     serializer_class = ChaveSerializers

@@ -30,7 +30,6 @@ class Reserva(models.Model):
     def data_reserva_formatada(self):
         return self.data_reserva.strftime('%d/%m/%Y - %H:%M')
     
-
     def reservado(self):
         if self.data_devolucao != None:
             self.ativo = False
