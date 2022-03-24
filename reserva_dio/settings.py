@@ -11,21 +11,18 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dj_database_url import parse as dburl
+from decouple import config
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+SECRET_KEY = config('SECRET_KEY')
+DEBUG = config('DEBUG', default=False, cast=bool)
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-mfdx%t!pc9lio4#mxp2n3(y)xnfp_p(w6vx#=_e%d%4h&&rgnd'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['reservas-dio.herokuapp.com']
 
 
 # Application definition
@@ -77,11 +74,9 @@ WSGI_APPLICATION = 'reserva_dio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+'default': config('DATABASE_URL', default=default_dburl, cast=dburl),
 }
 
 
@@ -122,6 +117,7 @@ USE_TZ = False
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_METHODS = [

@@ -1,0 +1,1 @@
+web: gunicorn reserva_dio.wsgi --log-file -
