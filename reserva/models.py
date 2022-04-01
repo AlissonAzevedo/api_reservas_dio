@@ -12,7 +12,7 @@ class Chave(models.Model):
 
 class Pessoa(models.Model):
     nome = models.CharField(max_length=100, null=False)
-    chapa = models.CharField(max_length=10)
+    cargo = models.CharField(max_length=50, null=True)
     def __str__(self):
         return self.nome
 
@@ -34,7 +34,7 @@ class Reserva(models.Model):
         return content_chave
 
     def pessoa(self):
-        content_pessoa = { 'nome': self.pessoas.nome, 'chapa': self.pessoas.chapa }
+        content_pessoa = { 'nome': self.pessoas.nome, 'cargo': self.pessoas.cargo }
         return content_pessoa
 
     def data_reserva_formatada(self):

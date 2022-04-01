@@ -5,3 +5,4 @@
 # Name of your virtuan env
 mv
 *pyc
+.mv

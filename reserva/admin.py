@@ -8,7 +8,7 @@ class ChaveAdmin(admin.ModelAdmin):
 
 @admin.register(Pessoa)
 class PessoaAdmin(admin.ModelAdmin):
-    list_display = ('nome', 'chapa')
+    list_display = ('nome', 'cargo')
 
 @admin.register(Reserva)
 class ReservaAdmin(admin.ModelAdmin):
