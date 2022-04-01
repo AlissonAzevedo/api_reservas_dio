@@ -22,6 +22,6 @@ class ChaveViewsets(viewsets.ModelViewSet):
     serializer_class = ChaveSerializers
 
 class PessoaViewsets(viewsets.ModelViewSet):
-    queryset = Pessoa.objects.all()
+    queryset = Pessoa.objects.all().order_by('nome')
     serializer_class = PessoaSerializers
 
