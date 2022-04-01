@@ -22,8 +22,7 @@ class Reserva(models.Model):
     chaves = models.ForeignKey(Chave, on_delete=models.CASCADE)
     pessoas = models.ForeignKey(Pessoa, on_delete=models.CASCADE, default=None)
     data_reserva = models.DateTimeField(auto_now_add=True)
-    data_devolucao = models.CharField(max_length=100, null=True, blank=True)
-
+    data_devolucao = models.DateTimeField(auto_now=True, null=True)
     devolvido = models.BooleanField(default=False)
 
     def __str__(self):
@@ -40,7 +39,6 @@ class Reserva(models.Model):
     def data_reserva_formatada(self):
         return self.data_reserva.strftime('%d/%m/%Y - %H:%M')
     
-    def reservado(self):
-        if self.data_devolucao is None:
-            self.data_devolucao = 'Não devolvido'
+    def data_devolucao_formatada(self):
+        return self.data_devolucao.strftime('%d/%m/%Y - %H:%M')
             

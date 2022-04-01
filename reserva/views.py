@@ -2,7 +2,7 @@ from collections import _OrderedDictItemsView
 from typing import OrderedDict
 from django.http import response
 from rest_framework.exceptions import NotFound
-from .models import Reserva, Chave, Pessoa
+from .models import *
 from .serializers import *
 
 from rest_framework import status

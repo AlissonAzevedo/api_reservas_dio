@@ -17,7 +17,7 @@ class ReservaSerializers(serializers.ModelSerializer):
     class Meta:
         model = Reserva
         #fields = "__all__"
-        fields = ['id', 'pessoas', 'pessoa', 'reservado','data_reserva_formatada',
-         'data_devolucao', 'chaves', 'chave', 'devolvido']
+        fields = ['id', 'pessoas', 'pessoa','data_reserva_formatada',
+         'data_devolucao_formatada', 'chaves', 'chave', 'devolvido']
 
         
