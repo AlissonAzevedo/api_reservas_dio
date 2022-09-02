@@ -1,6 +1,6 @@
 from django.db import router
 from rest_framework import urlpatterns
-from .views import *
+from reserva.api.viewsets import *
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()

@@ -12,4 +12,4 @@ class PessoaAdmin(admin.ModelAdmin):
 
 @admin.register(Reserva)
 class ReservaAdmin(admin.ModelAdmin):
-    list_display = ('chaves', 'pessoa', 'data_reserva', 'data_devolucao', 'devolvido')
+    list_display = ('get_chaves', 'nome_pessoa', 'data_reserva', 'data_devolucao', 'devolvido')
