@@ -28,6 +28,7 @@ ALLOWED_HOSTS = ['reservas-dio.herokuapp.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -142,3 +143,32 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
 #     ]
 # }
+
+# JAZZMIN_SETTINGS["show_ui_builder"] = True
+
+JAZZMIN_SETTINGS = {
+    # title of the window
+    'site_title': 'Reserva DIO',
+
+    # Title on the brand, and the login screen (19 chars max)
+    'site_header': 'Reserva DIO',
+
+    # Welcome text on the login screen
+    'welcome_sign': 'Bem vindo ao Reserva DIO',
+
+    # Custom links to add to top menu
+    'topmenu_links': [
+        # Url that you want to use
+        {"name": "Site", "url": "https://pega.vercel.app/", "new_window": True},
+        # {"model": "auth.User"},
+        {"app": "reserva"},
+
+        {"name": "Suporte", "url": "https://docs.djangoproject.com/en/4.0/", "new_window": True},
+
+    ],
+
+    # 'show_ui_builder': True,
+
+    # Title on the brand
+    # 'site_logo': 'logo.png',
+}

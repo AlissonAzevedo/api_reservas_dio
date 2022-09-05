@@ -48,7 +48,7 @@ class Reserva(models.Model):
     def data_devolucao_formatada(self):
         return self.data_devolucao.strftime('%d/%m/%Y - %H:%M')
 
-    def get_chaves(self):
+    def Chaves(self):
         if self.chaves.all():
             return list(self.chaves.all().values_list('numero', flat=True))
         else:
