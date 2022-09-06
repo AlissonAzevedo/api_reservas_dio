@@ -13,7 +13,7 @@ from rest_framework.response import Response
 
 
 class ReservaViewsets(viewsets.ModelViewSet):
-    queryset = Reserva.objects.all().order_by('-data_reserva')
+    queryset = Reserva.objects.filter(devolvido=False).order_by('-data_reserva')
     serializer_class = ReservaSerializers
     
 
